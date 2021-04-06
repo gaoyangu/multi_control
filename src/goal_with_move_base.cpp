@@ -95,6 +95,7 @@ int main(int argc, char** argv)
     float color_r_ = 0.0;
     float color_g_ = 0.0;
     float color_b_ = 0.0;
+    trajecty_sum_ = 0.0;
 
     ROS_INFO("robot no. %s", robot_id.c_str());
 
