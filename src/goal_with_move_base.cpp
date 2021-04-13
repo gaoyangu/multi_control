@@ -25,6 +25,7 @@ Eigen::Vector4d current_state_, last_state_;
 string robot_id;
 double trajecty_sum_;
 int flag;
+bool flag_trajecty;
 
 visualization_msgs::Marker trajectory_vis;
 
@@ -42,8 +43,10 @@ void StateCallBack(const geometry_msgs::Pose::ConstPtr& msg)
     current_state_(1) =    msg->position.y;
     current_state_(2) =    msg->orientation.z;
     current_state_(3) =    msg->position.z;
-
-    trajecty_sum_ += std::sqrt(std::pow(current_state_(0) - last_state_(0),2)+std::pow(current_state_(1) - last_state_(1),2));
+    if(flag_trajecty){
+        trajecty_sum_ += std::sqrt(std::pow(current_state_(0) - last_state_(0),2)+std::pow(current_state_(1) - last_state_(1),2));
+    }
+    flag_trajecty = true;
     publishTrajectory();
 }
 
@@ -92,6 +95,7 @@ int main(int argc, char** argv)
     robot_id = id;
 
     flag = 0;
+    flag_trajecty = false;
     float color_r_ = 0.0;
     float color_g_ = 0.0;
     float color_b_ = 0.0;
