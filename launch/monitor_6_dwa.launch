@@ -30,12 +30,12 @@
     </node>
     <node pkg="multi_control" type="goal_with_move_base" name="goal_monitor" args="4" output="screen" ns="$(arg ns4)">
         <param name="color_r" value="0.0"/>
-        <param name="color_g" value="0.8"/>
-        <param name="color_b" value="0.0"/>    
+        <param name="color_g" value="0.0"/>
+        <param name="color_b" value="0.8"/>    
     </node>
     <node pkg="multi_control" type="goal_with_move_base" name="goal_monitor" args="5" output="screen" ns="$(arg ns5)">
         <param name="color_r" value="0.0"/>
-        <param name="color_g" value="0.0"/>
-        <param name="color_b" value="0.8"/>    
+        <param name="color_g" value="0.8"/>
+        <param name="color_b" value="0.0"/>    
     </node>
 </launch>
