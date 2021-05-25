@@ -127,8 +127,8 @@ int main(int argc, char** argv)
     // color_g_ = nh.getParam("color_g", 0.0);
     // color_b_ = nh.getParam("color_b", 0.0);
 
-    robot_state_sub_ = nh.subscribe("robot_state", 1, &StateCallBack);
-    goal_status_sub_ = nh.subscribe("goal_status", 1, &goalStatusCallBack);
+    robot_state_sub_ = nh.subscribe("robot_state", 1, StateCallBack);
+    goal_status_sub_ = nh.subscribe("goal_status", 1, goalStatusCallBack);
     traj_pub_ = nh.advertise<visualization_msgs::MarkerArray>("pd_trajectory", 1);
 
     trajectory_vis.type = visualization_msgs::Marker::CYLINDER;
@@ -145,5 +145,9 @@ int main(int argc, char** argv)
     trajectory_vis.scale.y = 0.05;
     trajectory_vis.scale.z = 0.05;
 
-    ros::spin();
+    while (nh.ok())
+    {
+        ros::spinOnce();
+    }
+    return 0;
 }
