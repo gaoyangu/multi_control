@@ -3,7 +3,7 @@
 <launch>
     <arg name="ns0" default="jackal0"/>
     <arg name="ns1" default="jackal1"/>
-    <arg name="ns2" default="jackal2"/>
+    <!-- arg name="ns2" default="jackal2"/-->
 
     <node pkg="multi_control" type="goal_with_move_base" name="goal_monitor" args="0" output="screen" ns="$(arg ns0)">
         <param name="color_r" value="0.8"/>
@@ -15,9 +15,9 @@
         <param name="color_g" value="0.8"/>
         <param name="color_b" value="0.0"/>    
     </node>
-    <node pkg="multi_control" type="goal_with_move_base" name="goal_monitor" args="2" output="screen" ns="$(arg ns2)">
+    <!-- node pkg="multi_control" type="goal_with_move_base" name="goal_monitor" args="2" output="screen" ns="$(arg ns2)">
         <param name="color_r" value="0.0"/>
         <param name="color_g" value="0.0"/>
         <param name="color_b" value="0.8"/>    
-    </node>
+    </node -->
 </launch>
