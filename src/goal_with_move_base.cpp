@@ -145,9 +145,10 @@ int main(int argc, char** argv)
     trajectory_vis.scale.y = 0.05;
     trajectory_vis.scale.z = 0.05;
 
-    while (nh.ok())
-    {
-        ros::spinOnce();
-    }
-    return 0;
+    // while (nh.ok())
+    // {
+    //     ros::spinOnce();
+    // }
+    // return 0;
+    ros::spin();
 }
